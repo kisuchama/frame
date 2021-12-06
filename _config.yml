@@ -3,7 +3,7 @@
 language: en
 
 # header
-site_brand_name: Frame.
+site_brand_name: キスちゃま
 
 logo_image:
   enable: false
@@ -12,8 +12,8 @@ logo_image:
 menu:
   Home: /
   Archive: /archives/
-  Gallery: /categories/gallery/
-
+  About: /about/
+  
 # stylesheets loaded in the <head>
 stylesheets:
 - /css/style.css
