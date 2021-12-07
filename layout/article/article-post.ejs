@@ -21,7 +21,7 @@
                 <% } %>    
                 
             </div>
-            <p><%= post.excerpt %> <i class="uil uil-asterisk rm-div"></i> <a href="<%- url_for(post.path) %>" class="rm-div">Read More ></a></p>
+            <p><%= post.excerpt %> <i class="uil uil-heart-rate rm-div"></i> <a href="<%- url_for(post.path) %>" class="rm-div">Read More ></a></p>
             <div class="tag-list">
                 <% if (post.tags && post.tags.data && post.tags.data.length > 0) {%>
                     <% post.tags.data.forEach(function(tag) { %>

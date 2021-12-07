@@ -25,6 +25,13 @@
             <% } %>
             
         </div>
+        <% for (var event in site.data.events) { %>
+            <% if (site.data.events[event].name == page.event) { %>
+                <div class="mobi-wrapper">
+                    <p><strong><%= page.focus %>「<a href="/categories/<%- site.data.events[event].slug %>"><%- page.event %></a>」card story <i class="uil uil-heart-rate"></i></strong> <%= page.excerpt %>
+                </div>
+            <% } %>
+        <% } %>
         <span class="post-date">
             <%- date(page.date, theme.date_format) %>
         </span>

@@ -26,24 +26,3 @@
         </div>
     </div>
 </div>
-
-<!-- mobile -->
-<div class="mobi-wrapper"><div class="title-card-mobi" style="background-image:url('<%- url_for(page.path) %>card-mobile.png')">
-            <div class="card-content-mobi">
-                <h1><a href="<%- url_for(page.path) %>"><%= page.title %></a></h1>
-                <div><a href="<%= page.event.url %>"><%= page.event.name %></a></div>
-                <div class="card-tags-mobi">
-                    <% for (var i = 0; i < page.heroes.length; i++) { %>
-                        <% for (var chara in site.data.heroes) { %>
-                            <% if (site.data.heroes[chara].name == page.heroes[i]) { %>
-                                <a href="<%- site.data.heroes[chara].tag %>"><img src="https://res.cloudinary.com/kisu/image/upload/c_limit,h_80/<%- site.data.heroes[chara].chibi %>"></a>
-                            <% } %>
-                        <% } %>
-                    <% } %>
-                </div>
-            </div>
-            <div class="excerpt-mobi">
-                <p><%= page.excerpt %></p>
-               </div>
-    </div>
-</div>
