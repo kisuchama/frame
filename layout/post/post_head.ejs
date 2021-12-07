@@ -25,21 +25,28 @@
             <% } %>
             
         </div>
+        <% if (page.event) {%>
+        <div class="cg" id="slider-box">
+            <div id="unevo" style="background-image:url('<%- url_for(page.path) %>card-unevo.png')"></div>
+            <div id="evo" style="background-image:url('<%- url_for(page.path) %>card-evo.png')"></div>
+            <div id="slider"><div id="swiper">
+                <i class="uil uil-align-center-h"></i>
+            </div></div>
+            <div id="left-target"></div>
+            <div id="right-target"></div>
+        </div>
+        <%- js('js/slider.js') %>
         <% for (var event in site.data.events) { %>
             <% if (site.data.events[event].name == page.event) { %>
-                <div class="mobi-wrapper">
-                    <p><strong><%= page.focus %>「<a href="/categories/<%- site.data.events[event].slug %>"><%- page.event %></a>」card story <i class="uil uil-heart-rate"></i></strong> <%= page.excerpt %>
-                </div>
+                <p style="margin-top: 0;"><strong><%= page.focus %>「<a href="/categories/<%- site.data.events[event].slug %>"><%- page.event %></a>」card story <i class="uil uil-heart-rate"></i></strong> <%= page.excerpt %></p>
             <% } %>
+        <% } %>
         <% } %>
         <span class="post-date">
             <%- date(page.date, theme.date_format) %>
         </span>
     </div>
     <div class="post-img">
-        <% if (page.event) {%>
-            <%- partial('tls/story-post') %> 
-        <% } %>
         <div class="h-line-primary"></div>    
     </div>
 </div>

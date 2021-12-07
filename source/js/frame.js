@@ -31,5 +31,3 @@ function detectors(){
   detectTaskList();
   detectBlockTable();
 }
-
-
