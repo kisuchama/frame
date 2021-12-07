@@ -1,0 +1,16 @@
+<div class="content">
+    <%- partial('tls/story-card') %>
+    
+    <br>
+
+    <div class="article-entry marked-body" itemprop="articleBody">
+      <%- post.content %>
+    </div>
+    <div class="article-footer">
+    </div>
+  </article>
+</div>
+
+<% if (!index){ %>
+  <%- partial('post/meta') %>
+<% } %>

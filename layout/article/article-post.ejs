@@ -1,0 +1,38 @@
+<article class="post-article">
+    <div class="post-img">
+        <div class="h-line-primary"></div>
+    </div>  
+    <% if (post.event){ %>
+        <%- partial('tls/story-card') %>
+    <% } else { %>
+    <div class="post-info">
+            <div class="post-title">
+                <a href="<%- url_for(post.path) %>">
+                <% if (post.title) {%>
+                    <%= post.title %>
+                <% } else {%>
+                    *Untitled
+                <% } %>
+                </a>
+                <% if (post.CD) {%>
+                    <i class="uil uil-music"></i>
+                <% } else if (post.issue) {%>
+                    <i class="uil uil-book-open"></i>
+                <% } %>    
+                
+            </div>
+            <p><%= post.excerpt %> <i class="uil uil-asterisk rm-div"></i> <a href="<%- url_for(post.path) %>" class="rm-div">Read More ></a></p>
+            <div class="tag-list">
+                <% if (post.tags && post.tags.data && post.tags.data.length > 0) {%>
+                    <% post.tags.data.forEach(function(tag) { %>
+                        <span class="post-tag">
+                            <a href="<%-url_for(tag.path)%>">
+                                <%=tag.name%>
+                            </a>
+                        </span>    
+                    <% }) %>           
+                <% } %>
+            </div>
+        </div>
+    <% } %>
+</article>

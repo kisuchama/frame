@@ -1,0 +1,51 @@
+<!-- desktop -->
+<div class="title-card" style="background-image:url('<%- url_for(post.path) %>card-default.png')">
+    <div class="card-info">
+        <div class="card-event">
+            <% for (var event in site.data.events) { %>
+                <% if (site.data.events[event].name == post.event) { %>
+                    <a href="/categories/<%- site.data.events[event].slug %>"><%- post.event %></a>
+                <% } %>
+            <% } %>
+        </div>
+        <div class="card-focus"><%= post.focus %></div>
+    </div>
+    <div class="card-content">
+        <h1><a href="<%- url_for(post.path) %>"><%= post.title %></a></h1>
+        <div class="card-tags">
+            <% for (var i = 0; i < post.heroes.length; i++) { %>
+                <% for (var chara in site.data.heroes) { %>
+                    <% if (site.data.heroes[chara].name == post.heroes[i]) { %>
+                        <a href="<%- site.data.heroes[chara].tag %>"><img src="https://res.cloudinary.com/kisu/image/upload/<%- site.data.heroes[chara].chibi %>"></a>
+                    <% } %>
+                <% } %>
+            <% } %>
+        </div>
+        <div class="card-category">
+            <span><%= post.excerpt %></span>
+        </div>
+    </div>
+    <!-- read more button; HIDE OFF INDEX -->
+    <a href="<%- url_for(post.path) %>" class="card-btn"><span>Read More ></span></a>
+</div>
+
+<!-- mobile -->
+<div class="mobi-wrapper"><div class="title-card-mobi" style="background-image:url('<%- url_for(post.path) %>card-mobile.png')">
+            <div class="card-content-mobi">
+                <h1><a href="<%- url_for(post.path) %>"><%= post.title %></a></h1>
+                <div><a href="<%= post.event.url %>"><%= post.event.name %></a></div>
+                <div class="card-tags-mobi">
+                    <% for (var i = 0; i < post.heroes.length; i++) { %>
+                        <% for (var chara in site.data.heroes) { %>
+                            <% if (site.data.heroes[chara].name == post.heroes[i]) { %>
+                                <a href="<%- site.data.heroes[chara].tag %>"><img src="https://res.cloudinary.com/kisu/image/upload/c_limit,h_80/<%- site.data.heroes[chara].chibi %>"></a>
+                            <% } %>
+                        <% } %>
+                    <% } %>
+                </div>
+    </div>
+    <div class="excerpt-mobi">
+        <p><%= post.excerpt %></p>
+        <a href="<%- url_for(post.path) %>" class="card-btn-mobi"><span>Read More ></span></a>
+    </div>
+</div></div>

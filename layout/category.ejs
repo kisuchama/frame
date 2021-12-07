@@ -1,4 +1,29 @@
 <div id="category">
-  <%- partial('partials/post_gallery') %>
+  <% if(is_category()){ %>
+
+    <p class="tag-title">
+      / <a href="<%=url_for(/categories/)%>">categories</a>
+      <% if(page.category != "HeliosR"){ %>
+        / <a href="/categories/HeliosR">HeliosR</a>
+      <% } %>
+      / <a href="<%=page.category.path%>"><%= page.category %></a></p>
+    <%- partial('partials/post_list') %>
+
+  <% }else{ %>
+
+    <p class="tag-title">/ categories /</p>
+    <div class="tag-cloud">
+      <div class="tag-list">
+        <%site.categories.forEach(cat=>{%>
+          <span class="post-tag">
+            <a href="<%-url_for(cat.path)%>">
+              <%=cat.name%>
+            </a>
+          </span> 
+        <%})%> 
+      </div>
+    </div>
+
+  <% } %>
 </div>
 
