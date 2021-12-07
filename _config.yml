@@ -12,7 +12,7 @@ logo_image:
 menu:
   Home: /
   Archive: /archives/
-  About: /about/
+  About: /profile/kisuchama
 
 # stylesheets loaded in the <head>
 stylesheets:
@@ -33,25 +33,22 @@ date_format: MMM D, YYYY
 
 # profile
 profile:
-  title: 日本語 > ENG TL Archive. 
-  body: Mostly focusing on Helios Rising Heroes. Tentatively planning to work on magazine interviews and song lyrics.
+  title: growing things. 
+  body: Mobage translation archive. Mostly Helios Rising Heroes. Working on multi-author functionality to support hosting multiple translators.
   image: img/profile.png
 
-  links:
-    Twitter: https://twitter.com/kisuchama
-    Github: https://github.com/kisuchama
 # footer
 footer:
   copyright_info:
-    enable: true
-    author: kisuchama
+    enable: false
+    author: 
 
   powered_by: # Powered by Hexo & Frame
-    enable: true
+    enable: false
 
   other_info:
-    enable: false
-    content:
+    enable: true
+    content: developed by jin @ kisuchama
 
 # color mode: default / classic / dark
 color_mode: default
