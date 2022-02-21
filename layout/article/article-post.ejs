@@ -7,6 +7,9 @@
     <% } else { %>
     <div class="post-info">
             <div class="post-title">
+                <% if (post.sticky) {%>
+                    <i class="uil uil-bookmark"></i>
+                <% } %>
                 <a href="<%- url_for(post.path) %>">
                 <% if (post.title) {%>
                     <%= post.title %>
@@ -21,6 +24,9 @@
                 <% } %>    
                 
             </div>
+            <% if (post.storyindex) { %>
+                <%- partial('tls/event-card') %>
+            <% } %>
             <p><%= post.excerpt %> <i class="uil uil-heart-rate rm-div"></i> <a href="<%- url_for(post.path) %>" class="rm-div">Read More ></a></p>
             <div class="tag-list">
                 <% if (post.tags && post.tags.data && post.tags.data.length > 0) {%>
