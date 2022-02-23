@@ -34,7 +34,7 @@ date_format: MMM D, YYYY
 # profile
 profile:
   title: growing things. 
-  body: Mobage translation archive. Mostly Helios Rising Heroes. Working on multi-author functionality to support hosting multiple translators.
+  body: "Mobage translation archive. Mostly Helios Rising Heroes. Currently: Valentine's 2021 event story"
   image: img/profile.png
 
 # footer
