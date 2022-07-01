@@ -1,0 +1,44 @@
+<article class="post-article">
+    <div class="post-img">
+        <div class="h-line-primary"></div>
+    </div>  
+    <% if (post.focus){ %>
+        <%- partial('tls/story-card') %>
+    <% } else { %>
+    <div class="post-info">
+            <div class="post-title">
+                <% if (post.sticky) {%>
+                    <i class="uil uil-bookmark"></i>
+                <% } %>
+                <a href="<%- url_for(post.path) %>">
+                <% if (post.title) {%>
+                    <%= post.title %>
+                <% } else {%>
+                    *Untitled
+                <% } %>
+                </a>
+                <% if (post.CD) {%>
+                    <i class="uil uil-music"></i>
+                <% } else if (post.issue) {%>
+                    <i class="uil uil-book-open"></i>
+                <% } %>    
+                
+            </div>
+            <% if (post.storyindex) { %>
+                <%- partial('tls/event-card') %>
+            <% } %>
+            <p><%= post.excerpt %> <i class="uil uil-heart-rate rm-div"></i> <a href="<%- url_for(post.path) %>" class="rm-div">Read More ></a></p>
+            <div class="tag-list">
+                <% if (post.tags && post.tags.data && post.tags.data.length > 0) {%>
+                    <% post.tags.data.forEach(function(tag) { %>
+                        <span class="post-tag">
+                            <a href="<%-url_for(tag.path)%>">
+                                <%=tag.name%>
+                            </a>
+                        </span>    
+                    <% }) %>           
+                <% } %>
+            </div>
+        </div>
+    <% } %>
+</article>

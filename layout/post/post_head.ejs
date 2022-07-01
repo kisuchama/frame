@@ -15,20 +15,38 @@
             
             <% if (page.title) {%>
                 <%= page.title %>
+                <% if (page.CD) {%>
+                    <i class="uil uil-music"></i>
+                <% } else if (page.issue) {%>
+                    <i class="uil uil-book-open"></i>
+                <% } %>    
             <% } else {%>
                 *Untitled
             <% } %>
             
         </div>
+        <% if (page.focus) {%>
+        <div class="cg" id="slider-box">
+            <div id="unevo" style="background-image:url('/img/<%- page.slug %>/card-unevo.png')"></div>
+            <div id="evo" style="background-image:url('/img/<%- page.slug %>/card-evo.png')"></div>
+            <div id="slider"><div id="swiper">
+                <i class="uil uil-align-center-h"></i>
+            </div></div>
+            <div id="left-target"></div>
+            <div id="right-target"></div>
+        </div>
+        <%- js('js/slider.js') %>
+        <% for (var event in site.data.events) { %>
+            <% if (site.data.events[event].name == page.event) { %>
+                <p style="margin-top: 0;"><strong><%= page.focus %>「<a href="/categories/<%- site.data.events[event].slug %>"><%- page.event %></a>」card story <i class="uil uil-heart-rate"></i></strong> <%= page.excerpt %></p>
+            <% } %>
+        <% } %>
+        <% } %>
         <span class="post-date">
             <%- date(page.date, theme.date_format) %>
         </span>
     </div>
     <div class="post-img">
-        <% if (page.featured_image) {%>
-            <img src="<%= url_for(page.featured_image)%>" alt="featured_image">
-        <% } else { %>
-            <div class="h-line-primary"></div>
-        <% } %>      
+        <div class="h-line-primary"></div>    
     </div>
 </div>

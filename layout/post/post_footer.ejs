@@ -2,18 +2,18 @@
     <div class="h-line-primary"></div>
     <nav class="post-nav">
         <div class="prev-item">
-           <%if (page.prev) {%>
+           <%if (page.past) {%>
                 <div class="icon arrow-left"></div>
                 <div class="post-link">
-                    <a href="<%=url_for(page.prev.path)%>">Prev</a>
+                    <a href="/tl/<%- page.past %>">Prev</a>
                 </div>
             <%}%>
         </div>
         <div class="next-item">
-            <%if (page.next) {%>
+            <%if (page.future) {%>
                 <div class="icon arrow-right"></div>
                 <div class="post-link">
-                  <a href="<%=url_for(page.next.path)%>">Next</a>  
+                  <a href="/tl/<%- page.future %>">Next</a>  
                 </div>  
             <%}%>
         </div>

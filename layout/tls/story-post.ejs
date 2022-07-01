@@ -1,0 +1,28 @@
+<!-- desktop -->
+<div class="title-card hidden-xs hidden-sm hidden-md visible-lg" style="background-image:url('<%- url_for(page.path) %>card-default.png')">
+    <div class="card-info">
+        <div class="card-event">
+            <% for (var event in site.data.events) { %>
+                <% if (site.data.events[event].name == page.event) { %>
+                    <a href="/categories/<%- site.data.events[event].slug %>"><%- page.event %></a>
+                <% } %>
+            <% } %>
+        </div>
+        <div class="card-focus"><%= page.focus %></div>
+    </div>
+    <div class="card-content">
+        <h1><a href="<%- url_for(page.path) %>"><%= page.title %></a></h1>
+        <div class="card-tags">
+            <% for (var i = 0; i < page.heroes.length; i++) { %>
+                <% for (var chara in site.data.heroes) { %>
+                    <% if (site.data.heroes[chara].name == page.heroes[i]) { %>
+                        <a href="<%- site.data.heroes[chara].tag %>"><img src="https://res.cloudinary.com/kisu/image/upload/<%- site.data.heroes[chara].chibi %>"></a>
+                    <% } %>
+                <% } %>
+            <% } %>
+        </div>
+        <div class="card-category">
+            <span><%= page.excerpt %></span>
+        </div>
+    </div>
+</div>
